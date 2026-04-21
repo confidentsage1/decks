@@ -368,11 +368,9 @@
 
 /* =============================================
    QUOTE SLIDE
+   Note: max-width on child elements, NOT on
+   the section itself (would anchor it at left:0)
 ============================================= */
-.quote-slide {
-  max-width: 760px;
-}
-
 .quote-slide .q-mark {
   font-family: var(--font-disp);
   font-size: 5rem;
@@ -390,6 +388,8 @@
   color: var(--white);
   line-height: 1.4;
   margin: 0 0 1.6rem 0;
+  max-width: 760px;
+  text-align: center;
 }
 
 .quote-slide .q-attr {
@@ -398,15 +398,10 @@
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--gold);
-}
-
-/* Tickler variant: full-screen single vivid line */
-.tickler-slide {
-  max-width: 760px;
-  width: 100%;
   text-align: center;
 }
 
+/* Tickler variant: full-screen single vivid line */
 .tickler-slide .tick-line {
   font-family: var(--font-disp);
   font-size: clamp(1.8rem, 4vw, 3rem);
@@ -414,6 +409,7 @@
   font-style: italic;
   color: var(--gold);
   line-height: 1.3;
+  max-width: 760px;
   text-align: center;
 }
 
@@ -429,8 +425,6 @@
 
 /* Narrative beat slide */
 .beat-slide {
-  max-width: 700px;
-  width: 100%;
   text-align: center;
 }
 
@@ -441,6 +435,7 @@
   color: var(--white);
   line-height: 1.3;
   text-align: center;
+  max-width: 700px;
 }
 
 .beat-slide .beat-text em { font-style: italic; color: var(--gold); }
