@@ -179,6 +179,11 @@
 /* =============================================
    DEFINITION SLIDE
 ============================================= */
+.defn-slide {
+  width: 100%;
+  text-align: center;
+}
+
 .defn-slide .eyebrow {
   font-family: var(--font-mono);
   font-size: 0.55rem;
@@ -398,6 +403,8 @@
 /* Tickler variant: full-screen single vivid line */
 .tickler-slide {
   max-width: 760px;
+  width: 100%;
+  text-align: center;
 }
 
 .tickler-slide .tick-line {
@@ -407,6 +414,7 @@
   font-style: italic;
   color: var(--gold);
   line-height: 1.3;
+  text-align: center;
 }
 
 .tickler-slide .tick-attr {
@@ -416,11 +424,14 @@
   text-transform: uppercase;
   color: var(--text-dim);
   margin-top: 1.6rem;
+  text-align: center;
 }
 
 /* Narrative beat slide */
 .beat-slide {
   max-width: 700px;
+  width: 100%;
+  text-align: center;
 }
 
 .beat-slide .beat-text {
@@ -429,6 +440,7 @@
   font-weight: 300;
   color: var(--white);
   line-height: 1.3;
+  text-align: center;
 }
 
 .beat-slide .beat-text em { font-style: italic; color: var(--gold); }
