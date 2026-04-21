@@ -30,14 +30,19 @@
 }
 
 .reveal .slides section {
-  display: flex;
+  /* !important overrides reveal.js JS-set display:block on active slides */
+  display: flex !important;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
   height: 100%;
   padding: 48px 72px;
   box-sizing: border-box;
   text-align: center;
+  /* Ensure flex works correctly inside reveal.js absolute-positioned slides */
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
 }
 
 .reveal .slides section.left { text-align: left; align-items: flex-start; }
