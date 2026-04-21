@@ -1,0 +1,756 @@
+/* =============================================
+   BRAND TOKENS — jamescompton.me
+============================================= */
+:root {
+  --bg:          #012124;
+  --bg-deep:     #00171a;
+  --bg-lifted:   #061e21;
+  --bg-card:     #0a2e32;
+  --gold:        #d7ad5a;
+  --gold-soft:   rgba(215,173,90,0.12);
+  --gold-rule:   rgba(215,173,90,0.28);
+  --text:        #d4cfc8;
+  --text-muted:  #8a9ea1;
+  --text-dim:    #506065;
+  --white:       #f0ebe3;
+  --font-disp:   'Cormorant Garamond', Georgia, serif;
+  --font-body:   'DM Sans', sans-serif;
+  --font-mono:   'DM Mono', monospace;
+}
+
+/* =============================================
+   REVEAL CORE
+============================================= */
+.reveal-viewport { background: var(--bg); }
+
+.reveal {
+  font-family: var(--font-body);
+  font-size: 22px;
+  color: var(--text);
+}
+
+.reveal .slides section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 48px 72px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.reveal .slides section.left { text-align: left; align-items: flex-start; }
+
+.reveal .progress { color: var(--gold); height: 2px; }
+.reveal .slide-number {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  color: var(--text-dim);
+  background: transparent;
+}
+
+/* =============================================
+   DAY HEADER SLIDE
+============================================= */
+.day-header .day-label {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.6rem;
+}
+
+.day-header h1 {
+  font-family: var(--font-disp);
+  font-size: clamp(3.2rem, 8vw, 5.8rem);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.05;
+  margin: 0 0 1.6rem 0;
+}
+
+.day-header h1 em { font-style: italic; color: var(--gold); }
+
+.day-header .time-tag {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+}
+
+.rule {
+  width: 60px;
+  height: 1px;
+  background: var(--gold-rule);
+  margin: 1.6rem auto;
+}
+
+/* =============================================
+   THREE-TIER STACK
+============================================= */
+.tier-stack {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 700px;
+  gap: 0;
+}
+
+.tier {
+  padding: 1.4rem 2rem;
+  border: 1px solid var(--gold-rule);
+  transition: opacity 0.4s ease;
+}
+
+.tier + .tier { border-top: none; }
+.tier-execution { background: #061e21; border-radius: 6px 6px 0 0; }
+.tier-strategy  { background: #0a2e32; }
+.tier-identity  { background: #0d3d3a; border-radius: 0 0 6px 6px; }
+
+.tier.dim { opacity: 0.18; filter: grayscale(0.5); }
+
+.tier-header {
+  display: flex;
+  align-items: baseline;
+  gap: 1.2rem;
+  margin-bottom: 0.4rem;
+}
+
+.tier-level {
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  min-width: 72px;
+}
+
+.tier-name {
+  font-family: var(--font-disp);
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1;
+}
+
+.tier-desc {
+  font-family: var(--font-body);
+  font-size: clamp(0.9rem, 1.7vw, 1.05rem);
+  font-weight: 300;
+  color: var(--text-muted);
+  padding-left: calc(72px + 1.2rem);
+}
+
+.tier-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.7rem;
+  padding-left: calc(72px + 1.2rem);
+}
+
+.tool-tag {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.06em;
+  color: var(--gold);
+  background: var(--gold-soft);
+  border: 1px solid var(--gold-rule);
+  padding: 0.2rem 0.55rem;
+  border-radius: 3px;
+}
+
+/* =============================================
+   SLIDE CAPTION
+============================================= */
+.slide-caption {
+  font-family: var(--font-disp);
+  font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 2rem;
+  max-width: 560px;
+}
+
+/* =============================================
+   DEFINITION SLIDE
+============================================= */
+.defn-slide .eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 2rem;
+}
+
+.defn-slide .defn-text {
+  font-family: var(--font-disp);
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.2;
+  max-width: 800px;
+}
+
+.defn-slide .defn-text em { font-style: italic; color: var(--gold); }
+
+.defn-slide .sub {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-weight: 300;
+  color: var(--text-muted);
+  margin-top: 1.6rem;
+  max-width: 640px;
+}
+
+/* =============================================
+   ARCHETYPE GRID (overview)
+============================================= */
+.archetype-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  width: 100%;
+  max-width: 760px;
+  border: 1px solid var(--gold-rule);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.arch-cell {
+  background: var(--bg-card);
+  padding: 1.4rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid var(--gold-rule);
+}
+
+.arch-cell .arch-num {
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  letter-spacing: 0.15em;
+  color: var(--gold);
+}
+
+.arch-cell .arch-name {
+  font-family: var(--font-disp);
+  font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1.2;
+  text-align: center;
+}
+
+/* =============================================
+   ARCHETYPE CARD (individual slides)
+============================================= */
+.arch-card {
+  max-width: 680px;
+  width: 100%;
+  border: 1px solid var(--gold-rule);
+  border-radius: 8px;
+  padding: 3rem 3.5rem;
+  background: var(--bg-card);
+}
+
+.arch-card .arch-label {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.2rem;
+}
+
+.arch-card h2 {
+  font-family: var(--font-disp);
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.1;
+  margin: 0 0 1.4rem 0;
+}
+
+.arch-card .arch-def {
+  font-family: var(--font-body);
+  font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+  font-weight: 300;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* =============================================
+   BAR CHART (distribution)
+============================================= */
+.bar-chart {
+  width: 100%;
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.bar-chart .chart-title {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.bar-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.bar-label {
+  font-family: var(--font-body);
+  font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+  font-weight: 400;
+  color: var(--text);
+  width: 200px;
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.bar-track {
+  flex: 1;
+  height: 28px;
+  background: var(--bg-lifted);
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+}
+
+.bar-fill {
+  height: 100%;
+  background: var(--gold);
+  border-radius: 3px;
+  opacity: 0.85;
+}
+
+.bar-fill.highlight { opacity: 1; }
+.bar-fill.secondary { background: rgba(215,173,90,0.5); }
+.bar-fill.tertiary  { background: rgba(215,173,90,0.3); }
+
+.bar-pct {
+  font-family: var(--font-mono);
+  font-size: clamp(0.75rem, 1.4vw, 0.9rem);
+  color: var(--gold);
+  width: 40px;
+  flex-shrink: 0;
+  text-align: left;
+}
+
+.bar-note {
+  font-family: var(--font-disp);
+  font-size: clamp(0.9rem, 1.8vw, 1.2rem);
+  font-style: italic;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 1.2rem;
+}
+
+/* =============================================
+   QUOTE SLIDE
+============================================= */
+.quote-slide {
+  max-width: 760px;
+}
+
+.quote-slide .q-mark {
+  font-family: var(--font-disp);
+  font-size: 5rem;
+  line-height: 0.6;
+  color: var(--gold);
+  margin-bottom: 1.2rem;
+  opacity: 0.6;
+}
+
+.quote-slide blockquote {
+  font-family: var(--font-disp);
+  font-size: clamp(1.5rem, 3.2vw, 2.2rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--white);
+  line-height: 1.4;
+  margin: 0 0 1.6rem 0;
+}
+
+.quote-slide .q-attr {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* Tickler variant: full-screen single vivid line */
+.tickler-slide {
+  max-width: 760px;
+}
+
+.tickler-slide .tick-line {
+  font-family: var(--font-disp);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--gold);
+  line-height: 1.3;
+}
+
+.tickler-slide .tick-attr {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-top: 1.6rem;
+}
+
+/* Narrative beat slide */
+.beat-slide {
+  max-width: 700px;
+}
+
+.beat-slide .beat-text {
+  font-family: var(--font-disp);
+  font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.3;
+}
+
+.beat-slide .beat-text em { font-style: italic; color: var(--gold); }
+
+/* =============================================
+   INNER METHOD ARC
+============================================= */
+.inner-arc {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  width: 100%;
+  max-width: 760px;
+}
+
+.inner-stage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 0 0.4rem;
+}
+
+.inner-stage + .inner-stage::before {
+  content: '→';
+  position: absolute;
+  left: -0.7rem;
+  top: 1.5rem;
+  color: var(--gold-rule);
+  font-size: 1rem;
+}
+
+.stage-letter {
+  font-family: var(--font-disp);
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  font-weight: 600;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 0.6rem;
+}
+
+.stage-letter.radiate {
+  color: var(--white);
+  background: var(--gold);
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  margin: 0 auto 0.6rem;
+}
+
+.stage-name {
+  font-family: var(--font-mono);
+  font-size: 0.52rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.stage-def {
+  font-family: var(--font-body);
+  font-size: clamp(0.7rem, 1.4vw, 0.85rem);
+  font-weight: 300;
+  color: var(--text-dim);
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* Sprint vs Circle bracket */
+.bracket-row {
+  display: flex;
+  width: 100%;
+  max-width: 760px;
+  margin-top: 1.6rem;
+  gap: 0.5rem;
+}
+
+.bracket {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--gold-rule);
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.bracket.sprint { flex: 4; background: var(--gold-soft); color: var(--gold); }
+.bracket.circle { flex: 1; background: rgba(100,180,160,0.1); color: #6ab8a8; border-color: rgba(100,180,160,0.3); }
+
+/* =============================================
+   7 QUESTIONS SLIDE
+============================================= */
+.questions-list {
+  max-width: 760px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.q-item {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  text-align: left;
+  border-left: 2px solid var(--gold-rule);
+  padding-left: 1rem;
+}
+
+.q-num {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  min-width: 20px;
+  flex-shrink: 0;
+}
+
+.q-text {
+  font-family: var(--font-disp);
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1.3;
+}
+
+.q-text em { font-style: italic; color: var(--text-muted); }
+
+/* =============================================
+   SPRINT OFFER SLIDE
+============================================= */
+.offer-card {
+  max-width: 680px;
+  width: 100%;
+  border: 1px solid var(--gold-rule);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.offer-header {
+  background: var(--gold);
+  padding: 1.2rem 2rem;
+}
+
+.offer-header h2 {
+  font-family: var(--font-disp);
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 600;
+  color: var(--bg);
+  margin: 0;
+}
+
+.offer-body {
+  background: var(--bg-card);
+  padding: 1.8rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.offer-line {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-align: left;
+}
+
+.offer-line .dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+
+.offer-line span {
+  font-family: var(--font-body);
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+  color: var(--text);
+}
+
+.offer-price {
+  background: var(--bg-lifted);
+  padding: 1.2rem 2rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.price-main {
+  font-family: var(--font-disp);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+  color: var(--white);
+}
+
+.price-ypd {
+  font-family: var(--font-body);
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+  color: var(--gold);
+}
+
+/* =============================================
+   TIMELINE (Day 5)
+============================================= */
+.timeline {
+  width: 100%;
+  max-width: 720px;
+  margin-top: 1.8rem;
+  position: relative;
+}
+
+.timeline-track {
+  display: flex;
+  align-items: flex-start;
+  padding-top: 0.8rem;
+  position: relative;
+}
+
+.timeline-track::before {
+  content: '';
+  position: absolute;
+  top: 1.3rem;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--gold-rule);
+}
+
+.tl-node {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.tl-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 2px solid var(--bg);
+  z-index: 1;
+  margin-top: 0.4rem;
+}
+
+.tl-dot.entry { background: var(--gold-soft); border-color: var(--gold); }
+
+.tl-product {
+  font-family: var(--font-body);
+  font-size: clamp(0.58rem, 1.2vw, 0.72rem);
+  font-weight: 500;
+  color: var(--white);
+  text-align: center;
+  line-height: 1.3;
+}
+
+.tl-price {
+  font-family: var(--font-mono);
+  font-size: clamp(0.5rem, 1vw, 0.6rem);
+  color: var(--gold);
+  text-align: center;
+}
+
+/* =============================================
+   PLACEHOLDER SLIDE
+============================================= */
+.placeholder-slide {
+  border: 2px dashed var(--gold-rule);
+  border-radius: 8px;
+  padding: 3rem;
+  max-width: 640px;
+  width: 100%;
+}
+
+.placeholder-slide .ph-label {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 1.2rem;
+}
+
+.placeholder-slide .ph-title {
+  font-family: var(--font-disp);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 300;
+  color: var(--text-muted);
+}
+
+/* =============================================
+   RESPONSIVE: MOBILE LANDSCAPE / 35% ZOOM
+============================================= */
+@media (max-height: 520px) {
+  .reveal .slides section { padding: 24px 40px; }
+  .day-header h1 { font-size: clamp(2.4rem, 7vw, 4rem); margin-bottom: 1rem; }
+  .tier { padding: 0.9rem 1.4rem; }
+  .tier-name { font-size: clamp(1.4rem, 3vw, 1.9rem); }
+  .slide-caption { margin-top: 1rem; font-size: clamp(0.85rem, 1.8vw, 1.1rem); }
+  .arch-card { padding: 1.8rem 2rem; }
+  .arch-card h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); }
+  .defn-slide .defn-text { font-size: clamp(1.5rem, 4vw, 2.6rem); }
+  .quote-slide blockquote { font-size: clamp(1.2rem, 2.8vw, 1.8rem); }
+  .tickler-slide .tick-line { font-size: clamp(1.4rem, 3.5vw, 2.2rem); }
+  .inner-arc { gap: 0; }
+  .stage-letter { font-size: clamp(1.8rem, 4vw, 2.8rem); }
+  .bar-label { width: 160px; font-size: clamp(0.65rem, 1.3vw, 0.8rem); }
+  .bar-track { height: 22px; }
+}
